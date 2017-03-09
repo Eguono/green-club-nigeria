@@ -1,0 +1,30 @@
+{
+  "name": "green-club-nigeria",
+  "version": "1.0.0",
+  "description": "Website for green club nigeria",
+  "main": "server.js",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "firebase": "^3.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eguono/green-club-nigeria.git"
+  },
+  "keywords": [
+    "Express",
+    "Firebase"
+  ],
+  "author": "Efekemo Eguonoghene",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eguono/green-club-nigeria/issues"
+  },
+  "homepage": "https://github.com/Eguono/green-club-nigeria#readme"
+}
