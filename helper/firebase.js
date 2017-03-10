@@ -10,3 +10,9 @@ var firebase = require("firebase");
   };
   
 module.exports = firebase.initializeApp(config);
+
+
+process.env.authDomain
+process.env.databaseURL
+process.env.storageBucket
+process.env.messagingSenderId

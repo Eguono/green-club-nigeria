@@ -1,19 +1,27 @@
+const auth = require("../controller/auth.js")
 
-
-module.exports.webRoutes = (app, route) => {
-    app.get("/", (req, res) => {
-        res.send("Working!");
+module.exports = (app, route) => {
+    app.route("/")
+    .get((req, res) => {
+        res.render("index");
     });
 
-    app.get("/signUp", (req, res) => {
-        res.send("signUp");
-    });
+    app.route("/signUp")
+    .get((req, res) => {
+        res.render("signup", {error:null});
+    })
+    .post(auth.signUp);
 
-    app.get("/logIn", (req, res) => {
-        res.send("logIn");
-    });
+    app.route("/signIn").get((req, res) => {
+        res.render("signin", {error:null});
+    })
+    .post(auth.signIn);
 
-    app.get("/dashBoard", (req, res) => {
+    app.route('/signOut')
+        .get(auth.signOut);
+
+    app.route("/dashBoard")
+    .get((req, res) => {
         res.send("dashBoard");
     });
 

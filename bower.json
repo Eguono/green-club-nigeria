@@ -1,0 +1,24 @@
+{
+  "name": "green-club-nigeria",
+  "description": "Website for green club nigeria",
+  "main": "server.js",
+  "authors": [
+    "Efekemo Eguonoghene"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Express",
+    "Firebase"
+  ],
+  "homepage": "https://github.com/Eguono/green-club-nigeria",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

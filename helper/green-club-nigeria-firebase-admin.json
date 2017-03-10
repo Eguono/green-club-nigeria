@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "green-club-nigeria",
+  "private_key_id": "1e1a355288a6d711d8684399d2334d700c6fba33",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCqMv3eW2mTFChh\nxgWloKVNGPdCKzv7BdliF+xfuH5R20IwQ3sPbYEUx2XNKa3gUFYR3tbCIZBQpak2\n0hZMSXCYC50zabIJ+iJk8NaOuQnf9ywlhzTTbM++6TPT9cJel/5RsQvkc/+A8t5O\nBqrwSKWmBSnWkrSq9pIPT3Dvfeb3PV2YtXXflswSlRseFrUN7/uqoXvXLkj9I6NS\nXBbaGshTcCrNvWuEWaJIkXrIpTE/CA+7A8oUbdAOs6cCfL53oHR2u3tO7d/FCS25\nasPOJ1h79gJnYOU9ivGpTUrhMgQ1AWq/cG9qpY9ugy9maiOq3WjxU4ms7o1DAsVb\nV75M7YrtAgMBAAECggEAFbNSsxssptgXHgBFkAyfhuj7/a/NggAI63zpYnr/gChY\nlBbGhf0MTD3wOOxrgwI7NyQWdcIZyG6W2KqItUlX1csFTBzZ2nPOFtiuQpxNKgU1\n18MZdSuWgVzygr/+/Fic0IWmYoZ3uVU+CuzGtsRMepKF9xnVd0bg8JrMZ3zCChvP\nfX9VBuGO9vwAiRgdGLUGtOGns8oJrofYO5tfIeacAg+4b+Ic/l9b5l37L4Fwujf7\nF/FR113QHbeQtqnn/cwbffgHgl2SEFla9qG/WoexZCf5yifote4o7dMibFrscBa9\ngnzPkdHIaYyHYcNqjy8yH6wc43zDREPtjfrUbpy0gQKBgQDi1q7BhvJiHzIbIDU+\nfmwafii6U+tEej149P2hL2Kq9vd9lEXHLWL+678Kc25Hv/72oysFPE8wQX/NjLtx\n8SPX7DW3QfkbZu4Kwp4H4q36wJVJEMfjdm+IKopKGM7Fw/WJr/e68O9e4B0vL5Qg\nM1S5p0CyA1nuTo3E65Uc5mBPRQKBgQDAFEqEm5iXxDznFMbtCcBvg7a/I93+fTcV\njHBj286a1BXT1r04upVENqcCfEmnk5oH0QCKvG9Gmhw++55KsjufS8sU+wf+ZVqj\nBpYj1LWpWQ2zRKdhL23MZAtrqLq3ywVVz0754Poie910kDWXDlXJq+t83ho8Jppx\n+pgIaw0TiQKBgQC6AMW9pRUdhm0Ety1RuEKWmrp0xxlUxlOf2mwa/osOm4InNCzf\nfQT++XpmbG6SYQoFXZiKK4DXle3hM7QEY3I7vNHzGiLU6Frq8di5qJN22PHQvvTZ\nPKWJ5zAMQDlVCzFMnMErRiNSDb2AkqgIm26u6UlwbrUQZtNzFKXp07JHbQKBgAPx\nJqpcCyCqPVm8umxo89MWD+0STl8HsNa3YCMcgrv4uE31rUJ5ydBxkrHhXR2cUN/y\nMSGnxlzbktLUFSaRS9n0E0Hl+P8Gk3qfCvvHRMcp9bcFJK5A6+7y6q0V9GcLOpvN\nOmC0dk243w2iXAcymx4dciLI6B7t5+OI8g/SKp2JAoGAOH9mkWT3F7D8Ki9+1APE\nHU/7aYtwJQdY8L6Lyb8aE6K7IaEXM1dfVNL94/eqj54wNd8EbFh2HPAsEovj6Fjs\now+0S3yjVeZWI0Jhav0pksTpNP0UWXqzulTzFluksqltqIzNvJErjG+rneEMz0aJ\nLTYpiqgmsGwoKkRlnnwOdrs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-uqe6t@green-club-nigeria.iam.gserviceaccount.com",
+  "client_id": "103124289532919772819",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-uqe6t%40green-club-nigeria.iam.gserviceaccount.com"
+}
