@@ -1,8 +1,9 @@
 const admin = require("firebase-admin");
 
-const serviceAccount = require("./green-club-nigeria-firebase-admingreen.json");
+const serviceAccount = require("./serviceAccount.json");
 
-admin.initializeApp({
+module.exports = admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://green-club-nigeria.firebaseio.com"
 });
+

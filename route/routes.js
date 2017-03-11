@@ -1,4 +1,5 @@
-const auth = require("../controller/auth.js")
+const auth = require("../controller/auth.js");
+const user = require("../controller/user.js");
 
 module.exports = (app, route) => {
     app.route("/")
@@ -29,9 +30,8 @@ module.exports = (app, route) => {
         res.send("Viewing Articles");
     });
 
-    app.get("/viewUsers", (req, res) => {
-        res.send("Viewing Users");
-    });
+    app.route("/viewUsers")
+    .get(user.viewUser);
 
     app.get("/approveMembers", (req, res) => {
         res.send("Approve Members for Schools");
