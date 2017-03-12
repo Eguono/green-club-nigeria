@@ -25,8 +25,8 @@
                     <td><%= count %></td>
                     <td><%= users[user].fullName %></td>
                     <td><%= users[user].email %></td>
-                    <td><a class = "btn btn-primary" href = '/userUpdate?id=<%= users[user].userId %>'>Update</a></td>
-                    <td><a class = "btn btn-primary" href = '/deleteUpdate?<%= users[user].userId %>'>Delete</a></td>
+                    <td><a class = "btn btn-primary" href = '/updateUser?id=<%= users[user].userId %>'>Update</a></td>
+                    <td><a class = "btn btn-primary" href = '/deleteUser?id=<%= users[user].userId %>'>Delete</a></td>
                   </tr>
                   <% count += 1 %>
                   <% } %>

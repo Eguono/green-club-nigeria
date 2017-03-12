@@ -4,15 +4,33 @@ const db = firebase.database();
 const ref = db.ref('/');
 
 module.exports.viewUser = (req, res) => {
-    var user = firebase.auth().currentUser
+    let user = firebase.auth().currentUser;
     if (user) {
         ref.child('users').once('value', (snapShot) => {
             res.render('manageUser', { users: snapShot.val() })
         }, (err) => {
-            var errorCode = err.code;
-            var errorMessage = err.message;
+            let errorCode = err.code;
+            let errorMessage = err.message;
             console.log(err);
             res.redirect('/manageUser')
+        });
+    }
+}
+
+module.exports.updateInfo = (req, res) => {
+    let user = firebase.auth().currentUser;
+    let userId = req.query.id;
+    if (user) {
+        ref.child('users/' + userId).once('value', (snapShot) => {
+            res.render('updateUser', {
+                users: snapShot.val(),
+                error: null
+            })
+        }, (err) => {
+            let errorCode = err.code;
+            let errorMessage = err.message;
+            console.log(err);
+            res.redirect('/updateUser', { error: errorMessage })
         });
     }
 }

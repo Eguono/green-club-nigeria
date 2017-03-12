@@ -1,5 +1,6 @@
 const auth = require("../controller/auth.js");
 const user = require("../controller/user.js");
+const admin = require("../controller/admin.js");
 
 module.exports = (app, route) => {
     app.route("/")
@@ -32,6 +33,13 @@ module.exports = (app, route) => {
 
     app.route("/viewUsers")
     .get(user.viewUser);
+
+    app.route("/updateUser")
+    .get(user.updateInfo)
+    .post(admin.updateUser);
+ 
+    app.route("/deleteUser")
+    .get(admin.deleteUser);
 
     app.get("/approveMembers", (req, res) => {
         res.send("Approve Members for Schools");

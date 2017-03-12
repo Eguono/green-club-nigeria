@@ -12,7 +12,8 @@ module.exports.signUp = (req, res) => {
     fire_base.createUserWithEmailAndPassword(email, password)
         .then((user) => {
             user.updateProfile({
-                displayName: displayName
+                displayName: displayName,
+                photoURL: "/img/blank-profile-picture.png"
             }).catch((err) => {
                 var errorCode = err.code;
                 var errorMessage = err.message;
@@ -42,7 +43,6 @@ module.exports.signIn = (req, res) => {
 
     fire_base.signInWithEmailAndPassword(email, password)
         .then((user) => {
-            console.log(user);
             res.redirect('/dashboard');
         })
         .catch((err) => {
