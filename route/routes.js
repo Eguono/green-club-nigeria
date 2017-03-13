@@ -22,9 +22,9 @@ module.exports = (app, route) => {
     app.route('/signOut')
         .get(auth.signOut);
 
-    app.route("/dashBoard")
+    app.route("/dashboard")
     .get((req, res) => {
-        res.send("dashBoard");
+        res.render("dashboard");
     });
 
     app.get("/viewArticle", (req, res) => {
@@ -33,6 +33,12 @@ module.exports = (app, route) => {
 
     app.route("/viewUsers")
     .get(user.viewUser);
+
+    app.route("/createUser")
+    .get((req, res) => {
+        res.render("createUser", {error:null});
+    })
+    .post(admin.createUser);
 
     app.route("/updateUser")
     .get(user.updateInfo)

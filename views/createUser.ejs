@@ -3,7 +3,7 @@
       <div class="container">
         <div class="row text-center">
           <img class="img-rounded" src="/img/green-club-logo.jpeg" alt="AuthApp Login Image">
-          <h2 class="heading text-primary">Green Club Nigeria | Register</h2>
+          <h2 class="heading text-primary">Green Club Nigeria | Create New User</h2>
         </div>
         <div class="row">
 
@@ -14,7 +14,7 @@
             </div>
           <% } %>
 
-          <form class="form-signin" method = 'post' action = '/signUp'>
+          <form class="form-signin" method = 'post' action = '/createUser'>
             <!--<a class="btn btn-primary btn-block"><i></i>Register with Facebook</a>
             <a class="btn btn-default btn-block"><i></i>Register with Github</a>-->
             <br>
@@ -22,14 +22,14 @@
             <input type="text" id="full_name" name="full_name" class="form-control" placeholder="Full Name" required autofocus>
             <label for="user_name" class="sr-only">User Name</label>
             <input type="text" id="user_name" name="user_name" class="form-control" placeholder="User Name" required autofocus>
+            <!--<label for="photoUrl" class="sr-only">Display Picture</label>
+            <input type="photoUrl" id="photoUrl" name="photoUrl" class="form-control" placeholder = "Display picture Url" required autofocus>-->
             <label for="email" class="sr-only">Email address</label>
             <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
             <label for="password" class="sr-only">Password</label>
             <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
             
-            <button class="btn btn-primary btn-block" type = "submit">Sign Up</button>
-            <br>
-            <p>Have An Account? <a href="/signIn">Please Login</a></p>
+            <button class="btn btn-primary btn-block" type = "submit">Create User</button>
           </form>
         </div>
       </div>

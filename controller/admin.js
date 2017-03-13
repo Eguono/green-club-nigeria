@@ -60,3 +60,40 @@ module.exports.deleteUser = (req, res) => {
         });
 
 }
+
+module.exports.createUser = (req, res) => {
+
+    let fullName = req.body.full_name;
+    let displayName = req.body.user_name;
+    let email = req.body.email;
+    let password = req.body.password;
+
+    firebase_admin.createUser({
+        email: email,
+        emailVerified: true,
+        password: password,
+        displayName: displayName,
+        photoURL: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973461_960_720.png",
+        disabled: false
+    }).then((user) => {
+        let userId = user.uid;
+        let userRefs = ref.child("users/" + userId);
+        userRefs.set({
+            fullName: fullName,
+            displayName: displayName,
+            email: email,
+            userId: userId
+        }).catch((err) => {
+            var errorCode = err.code;
+            var errorMessage = err.message;
+            console.log(errorMessage);
+            return res.render('createUser', { error: errorMessage })
+        });
+        res.redirect('/viewUsers');
+    }).catch((err) => {
+        var errorCode = err.code;
+        var errorMessage = err.message;
+        console.log(errorMessage);
+        return res.render('createUser', { error: errorMessage })
+    });
+}
