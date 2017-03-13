@@ -4,5 +4,5 @@ var ref = db.ref('/');
 
 
 module.exports.postArticle = (req, res) => {
-    
+    let article = req.body.article;
 }
