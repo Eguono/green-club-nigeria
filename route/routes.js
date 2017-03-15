@@ -1,6 +1,7 @@
 const auth = require("../controller/auth.js");
 const user = require("../controller/user.js");
 const admin = require("../controller/admin.js");
+const article = require("../controller/article.js");
 
 module.exports = (app, route) => {
     app.route("/")
@@ -24,7 +25,7 @@ module.exports = (app, route) => {
 
     app.route("/dashboard")
     .get((req, res) => {
-        res.render("dashboard");
+        res.render("dashboard", {error:null});
     });
 
     app.get("/viewArticle", (req, res) => {
@@ -47,9 +48,14 @@ module.exports = (app, route) => {
     app.route("/deleteUser")
     .get(admin.deleteUser);
 
-    app.get("/approveMembers", (req, res) => {
-        res.send("Approve Members for Schools");
-    });
+    app.route("/article")
+    .get((req, res)=>{
+        res.render("article", {error:null});
+    })
+    .post(article.postArticle);
+
+    app.route("/approveMembers")
+    .get(auth.viewUnapproved);
 
     app.get("/createUser", (req, res) => {
         res.send("Creating Super Admins and User Admins");

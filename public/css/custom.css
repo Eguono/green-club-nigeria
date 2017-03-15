@@ -13,6 +13,12 @@ body#form_layout {
   float: right;
 }
 
+.article{
+  max-width: 80%;
+  max-height: 80%;
+  min-height: 40%;
+}
+
 .wrapper {
   margin-top: 20px;
   padding-left: 40px;

@@ -35,7 +35,6 @@ module.exports.updateUser = (req, res) => {
             userId: userId
         });
         res.redirect('viewUsers');
-        console.log("Successfully updated user", userRecord.toJSON());
     }).catch((err) => {
         var errorCode = err.code;
         var errorMessage = err.message;
@@ -53,8 +52,8 @@ module.exports.deleteUser = (req, res) => {
             res.redirect('viewUsers');
         })
         .catch((err) => {
-            var errorCode = err.code;
-            var errorMessage = err.message;
+            let errorCode = err.code;
+            let errorMessage = err.message;
             console.log(errorMessage);
             res.redirect('viewUsers');
         });
@@ -66,6 +65,7 @@ module.exports.createUser = (req, res) => {
     let fullName = req.body.full_name;
     let displayName = req.body.user_name;
     let email = req.body.email;
+    let schoolName = req.body.schoolName;
     let password = req.body.password;
 
     firebase_admin.createUser({
@@ -78,21 +78,29 @@ module.exports.createUser = (req, res) => {
     }).then((user) => {
         let userId = user.uid;
         let userRefs = ref.child("users/" + userId);
+        let schoolRefs = ref.child("schools/"+ schoolName);
+
+        schoolRefs.set({
+            adminId: userId
+        });
+
         userRefs.set({
             fullName: fullName,
             displayName: displayName,
             email: email,
             userId: userId
         }).catch((err) => {
-            var errorCode = err.code;
-            var errorMessage = err.message;
+            let errorCode = err.code;
+            let errorMessage = err.message;
             console.log(errorMessage);
             return res.render('createUser', { error: errorMessage })
         });
+
         res.redirect('/viewUsers');
+
     }).catch((err) => {
-        var errorCode = err.code;
-        var errorMessage = err.message;
+        let errorCode = err.code;
+        let errorMessage = err.message;
         console.log(errorMessage);
         return res.render('createUser', { error: errorMessage })
     });
