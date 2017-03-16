@@ -64,29 +64,32 @@ module.exports.signOut = (req, res) => {
     });
 }
 
-
+var results;
 module.exports.viewUnapproved = (req, res) => {
     let user = fire_base.currentUser;
     let userId = user.uid;
+
     ref.child("schools").once("value", (snapShot) => {
         for (users in snapShot.val()) {
             if (userId === snapShot.val()[users].adminId) {
-                ref.child("unapprovedUsers/" + users).once("value", (snapShot) => {
-                    console.log(snapShot.val());
-                    res.render("unapproved", { users: snapShot.val() })
-                }).catch((err) => {
-                    let errorCode = err.code;
-                    let errorMessage = err.message;
-                    return res.render('dashboard', { error: errorMessage })
-                });
+                result = users;
             }
         }
+    }).then(user => {
+        ref.child("unapprovedUsers/" + result).once("value").then((snapShot) => {
+            console.log(snapShot.val());
+            res.render("unapproved", { users: snapShot.val() })
+        }).catch((err) => {
+            let errorCode = err.code;
+            let errorMessage = err.message;
+            return res.render('dashboard', { error: errorMessage })
+        });
+
+        console.log(result);
     }).catch((err) => {
         let errorCode = err.code;
         let errorMessage = err.message;
         return res.render('dashboard', { error: errorMessage })
-    }).then(user=>{
-        res.render("unapproved");
     });
 
 } 
