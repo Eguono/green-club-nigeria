@@ -1,7 +1,7 @@
 'use strict';
 //Web Server
 const express = require('express');
-const webRoutes = require('./route/routes.js');
+const webRoutes = require('./route/index.js');
 const dotenv = require('dotenv').config();
 const bodyParser = require('body-parser');
 const formidable = require('formidable');
