@@ -2,7 +2,7 @@
   "name": "green-club-nigeria",
   "version": "1.0.0",
   "description": "Website for green club nigeria",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "body-parser": "^1.17.1",
     "dotenv": "^4.0.0",
