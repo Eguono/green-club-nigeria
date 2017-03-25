@@ -4,7 +4,8 @@ const express = require('express');
 const webRoutes = require('./route/routes.js');
 const dotenv = require('dotenv').config();
 const bodyParser = require('body-parser');
-
+const formidable = require('formidable');
+const fs = require('fs');
 
 //Instance of Express App
 const app = express();
@@ -23,6 +24,7 @@ app.use(express.static('./public'));
 //using bodyParser as middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
 
 //Web App Routes
 webRoutes(app, route);

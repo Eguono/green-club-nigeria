@@ -2,6 +2,7 @@ const auth = require("../controller/auth.js");
 const user = require("../controller/user.js");
 const admin = require("../controller/admin.js");
 const article = require("../controller/article.js");
+const upload = require("../controller/upload.js");
 
 module.exports = (app, route) => {
     app.route("/")
@@ -68,4 +69,10 @@ module.exports = (app, route) => {
     app.get("/task", (req, res) => {
         res.send("Add Tasks for Users and User Admins");
     });
+
+    app.route("/upload")
+    .get((req, res)=>{
+        res.render("upload", {error:null});
+    })
+    .post(upload.uploadFile);
 }

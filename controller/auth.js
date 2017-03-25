@@ -64,7 +64,7 @@ module.exports.signOut = (req, res) => {
     });
 }
 
-var results;
+var result;
 module.exports.viewUnapproved = (req, res) => {
     let user = fire_base.currentUser;
     let userId = user.uid;
@@ -75,8 +75,9 @@ module.exports.viewUnapproved = (req, res) => {
                 result = users;
             }
         }
-    }).then(user => {
-        ref.child("unapprovedUsers/" + result).once("value").then((snapShot) => {
+    }).then(() => {
+        ref.child("unapprovedUsers" + "/" + result).once("value").then((snapShot) => {
+            console.log(result);
             console.log(snapShot.val());
             res.render("unapproved", { users: snapShot.val() })
         }).catch((err) => {
@@ -84,8 +85,6 @@ module.exports.viewUnapproved = (req, res) => {
             let errorMessage = err.message;
             return res.render('dashboard', { error: errorMessage })
         });
-
-        console.log(result);
     }).catch((err) => {
         let errorCode = err.code;
         let errorMessage = err.message;
