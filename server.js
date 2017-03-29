@@ -19,7 +19,7 @@ app.set('views', process.cwd() + '/views');
 app.set('view engine', 'ejs');
 
 //Setup static folder
-app.use(express.static('./public'));
+app.use(express.static('public'));
 
 //using bodyParser as middleware
 app.use(bodyParser.json());
