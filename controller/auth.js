@@ -6,7 +6,7 @@ const ref = db.ref('/');
 module.exports.signUp = (req, res) => {
     let fullName = req.body.full_name;
     let displayName = req.body.user_name;
-    let schoolName = req.body.schoolName;
+    // let schoolName = req.body.schoolName;
     let email = req.body.email;
     let password = req.body.password;
 
@@ -22,7 +22,7 @@ module.exports.signUp = (req, res) => {
             });
             user.sendEmailVerification();
             let userId = user.uid;
-            let userRefs = ref.child("unapprovedUsers/" + schoolName + "/" + userId)
+            let userRefs = ref.child("users/" + userId)
             userRefs.set({
                 fullName: fullName,
                 displayName: displayName,
